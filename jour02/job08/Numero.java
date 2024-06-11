@@ -14,6 +14,5 @@ public class Numero {
 
         longueur = String.valueOf(numero).length();
         System.out.println("Il y à " + longueur + " chiffres dans " + numero);
-
     }
 }
