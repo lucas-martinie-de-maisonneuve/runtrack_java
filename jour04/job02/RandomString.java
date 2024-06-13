@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class RandomString {
 
-    public static String generateRandomString(int longueur) {
+    public static String generateRandom(int longueur) {
         String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
         Random random = new Random();
         StringBuilder sb = new StringBuilder(longueur);
@@ -28,12 +28,12 @@ public class RandomString {
         
         long startTime = System.currentTimeMillis();
         
-        String randomString = generateRandomString(longueur);
+        String randomString = generateRandom(longueur);
         
         try (FileWriter writer = new FileWriter("jour04/job02/output.txt")) {
             writer.write(randomString);
         } catch (Exception  e) {
-            System.out.println("Une erreur est survenue lors de l'écriture dans le fichier.");
+            System.out.println("Erreur");
             e.printStackTrace();
         }
         
