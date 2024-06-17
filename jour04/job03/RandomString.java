@@ -19,6 +19,7 @@ public class RandomString {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        long startTime = System.currentTimeMillis();
 
         System.out.print("Entrez la longueur de la chaîne de : ");
         int longueur = scanner.nextInt();
@@ -27,10 +28,9 @@ public class RandomString {
         String firstHalf = randomString.substring(0, longueur / 2);
         String secondHalf = randomString.substring(longueur / 2);
 
-        long startTime = System.currentTimeMillis();
 
         Thread thread1 = new Thread(() -> {
-            try (FileWriter writer = new FileWriter("output.txt")) {
+            try (FileWriter writer = new FileWriter("job03/output.txt")) {
                 writer.write(firstHalf);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -38,7 +38,7 @@ public class RandomString {
         });
 
         Thread thread2 = new Thread(() -> {
-            try (FileWriter writer = new FileWriter("jour04/job03/output.txt", true)) {
+            try (FileWriter writer = new FileWriter("job03/output.txt", true)) {
                 writer.write(secondHalf);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -63,5 +63,3 @@ public class RandomString {
         scanner.close();
     }
 }
-
-
