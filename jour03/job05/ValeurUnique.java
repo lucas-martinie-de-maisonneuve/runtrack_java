@@ -1,7 +1,7 @@
-package jour03.job04;
+package jour03.job05;
 
-public class Occurence {
-    static void countOccurrence(int[] tableau) {
+public class ValeurUnique {
+    static void Unique(int[] tableau) {
         int[] count = new int[10];
 
         for (int i = 0; i < tableau.length; i++) {
@@ -9,7 +9,7 @@ public class Occurence {
         }
 
         for (int i = 0; i < count.length; i++) {
-            if (count[i] > 0) {
+            if (count[i] == 1) {
                 System.out.println("Nombre " + i + " : " + count[i] + " fois");
             }
         }
@@ -17,7 +17,7 @@ public class Occurence {
 
     public static void main(String[] args) {
         int[] tableau = { 3, 7, 3, 9, 8 };
-        countOccurrence(tableau);
+        Unique(tableau);
     }
 
 }
